@@ -1,6 +1,6 @@
-[![Coverage Status](https://coveralls.io/repos/github/Mupa1/propertypro-lite/badge.svg?branch=master)](https://coveralls.io/github/Mupa1/propertypro-lite?branch=master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b2669b5b2627aebf73b1/test_coverage)](https://codeclimate.com/github/Mupa1/propertypro-lite/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/b2669b5b2627aebf73b1/maintainability)](https://codeclimate.com/github/Mupa1/propertypro-lite/maintainability)
+[![Build Status](https://travis-ci.org/Mupa1/propertypro-lite.svg?branch=develop)](https://travis-ci.org/Mupa1/propertypro-lite)
+[![Coverage Status](https://coveralls.io/repos/github/Mupa1/propertypro-lite/badge.svg?branch=develop)](https://coveralls.io/github/Mupa1/propertypro-lite?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/86f64172acfd2044d5c4/maintainability)](https://codeclimate.com/github/Mupa1/propertypro-lite/maintainability)
 
 # Property-Pro-Lite
 Property Pro Lite is a platform where people can create and/or search properties for sale or rent.
