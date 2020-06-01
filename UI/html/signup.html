@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | PropertyPro-Lite</title>
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="sign-body">
+  <header>
+    <nav>
+      <h3 class="logo"><a href="../index.html">Property<span>P</span>ro</a></h3>
+      <a href="signin.html" class="nav-signin">SignIn</a>
+      <div id="nav-links">
+        <a href="#">Signin</a>
+      </div>
+      <a href="javascript:void(0);" class="nav-toggle" onclick="navToggle()">&#9776;</a>
+    </nav>
+  </header>
+  <main class="sign">
+    <section class="form-box">
+      <h1>Signup</h1>
+      <form action="./signin.html">
+        <input type="email" name="email" placeholder="Email" id="email" class="sign-input">
+        <input type="text" name="first-name" placeholder="First Name" id="first-name" class="sign-input">
+        <input type="text" name="last-name" placeholder="Last Name" id="last-name" class="sign-input">
+        <input type="text" name="address" placeholder="Address" id="address" class="sign-input">
+        <input type="tel" name="tel" placeholder="Phone Number" id="tel" class="sign-input">
+        <input type="password" name="password" placeholder="Password" id="password" class="sign-input">
+        <input type="password" name="confirm-password" placeholder="Confirm Password" id="confim-password" class="sign-input">
+        <input type="reset" value="Clear" class="btn reset">
+        <input type="submit" value="Submit" class="btn submit">
+        <div class="sign-links-box">
+          <p class="center"><a href="./signin.html" class="sign-link">Already have an Account? Signin</a></p>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="signup-footer">
+    <p class="copyright">PropertyPro © 2020 - by Mupa</p>
+  </footer>
+  <script src="../js/index.js"></script>
+</body>
+</html>
