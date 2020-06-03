@@ -85,7 +85,7 @@ GET | property/filter/?city=<city>&type=<type>&bathrooms=<bathrooms>&bedrooms<be
 
 ### Deployment
 
-The application template is hosted on  [github pages](https://mupa1.github.io/propertypro-lite/UI/)
+The application template is hosted on  [raw.githack.com](https://raw.githack.com/Mupa1/propertypro-lite/develop/UI/index.html)
 
 * Use any email and password to access other pages.
 
