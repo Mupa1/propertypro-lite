@@ -74,18 +74,18 @@ PATCH | users/changepassword | False  | Change password
 
 Method|End point | Public |Action
 -----------|----------|--------------|------
-POST | property/ | False | Post a property advert
-PATCH | property/:id | False | Edit a  property
-DELETE | property/:id | False | Delete a  property
-PATCH | property/:id/sold | False | Mark a property as sold
-PATCH | property/:id/available | False | Mark a property as available
-GET | property/ | True | Get all adverts properties
-GET | property/<property_id> | True | Get a specific property
-GET | property/filter/?city=<city>&type=<type>&bathrooms=<bathrooms>&bedrooms<bedrooms> | True | Filter and search Result 
+POST | properties/ | False | Post a property advert
+PATCH | properties/:id | False | Edit a  property
+DELETE | properties/:id | False | Delete a  property
+PATCH | properties/:id/sold | False | Mark a property as sold
+PATCH | properties/:id/available | False | Mark a property as available
+GET | properties/ | True | Get all adverts properties
+GET | properties/<property_id> | True | Get a specific property
+GET | properties/filter/?city=<city>&type=<type>&bathrooms=<bathrooms>&bedrooms<bedrooms> | True | Filter and search Result 
 
 ### Deployment
 
-The application template is hosted on  [github pages](https://mupa1.github.io/propertypro-lite/UI/)
+The application template is hosted on  [raw.githack.com](https://raw.githack.com/Mupa1/propertypro-lite/develop/UI/index.html)
 
 * Use any email and password to access other pages.
 
