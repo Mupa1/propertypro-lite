@@ -1,24 +1,43 @@
+import cloudinary from 'cloudinary';
+import dotenv from 'dotenv';
 import PropertyService from '../services/PropertyService';
 import Util from '../utils/Utils';
 
+
+dotenv.config();
 const util = new Util();
 
+cloudinary.config({
+  API_Environment_variable: process.env.CLOUDINARY_URL
+});
+
 class PropertyController {
-  static async addProperty(req, res) {
+  static addProperty(req, res) {
     const { city, estate, type, bedroom, bathroom, image_url, description, sale_or_rent } = req.body;
-    if (!city || !estate || !type || !bedroom || !bathroom || !image_url || !description || !sale_or_rent) {
+    if (!city || !estate || !type || !bedroom || !image_url || !bathroom || !description || !sale_or_rent) {
       util.setError(400, 'Please provide complete details');
       return util.send(res);
     }
-    const newProperty = req.body;
-    try {
-      const createdProperty = await PropertyService.addProperty(newProperty);
-      util.setSuccess(201, 'Property Added!', createdProperty);
-      return util.send(res);
-    } catch (error) {
-      util.setError(400, error.message);
-      return util.send(res);
-    }
+    cloudinary.uploader.upload(image_url, async (result) => {
+      const newProperty = {
+        city,
+        estate,
+        type,
+        bedroom,
+        bathroom,
+        description,
+        sale_or_rent,
+        image_url: result.url
+      };
+      try {
+        const createdProperty = await PropertyService.addProperty(newProperty);
+        util.setSuccess(201, 'Property Added!', createdProperty);
+        return util.send(res);
+      } catch (error) {
+        util.setError(400, error.message);
+        return util.send(res);
+      }
+    });
   }
 
   static async getAllProperties(req, res) {
