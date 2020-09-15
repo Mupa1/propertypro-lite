@@ -1,5 +1,6 @@
-require('dotenv').config();
+"use strict";
 
+require('dotenv').config();
 
 module.exports = {
   development: {
@@ -9,7 +10,6 @@ module.exports = {
     host: '127.0.0.1',
     dialect: 'postgres'
   },
-
   test: {
     database: 'property_test',
     username: 'postgres',
@@ -17,7 +17,6 @@ module.exports = {
     host: '127.0.0.1',
     dialect: 'postgres'
   },
-
   production: {
     database: process.env.DB_NAME,
     username: process.env.DB_USER,
@@ -27,3 +26,4 @@ module.exports = {
     dialect: 'postgres'
   }
 };
+//# sourceMappingURL=config.js.map

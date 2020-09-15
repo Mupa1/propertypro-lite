@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./api/index.js",
     "test": "export NODE_ENV=test &&  sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --require @babel/register  mocha ./api/test/**/*.js --timeout 20000 --exit",
+    "build": "rm -rf ./build && babel -d ./build ./api -s",
+    "start": "node ./build/index.js",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",

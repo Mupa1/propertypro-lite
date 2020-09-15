@@ -13,8 +13,8 @@ cloudinary.config({
 
 class PropertyController {
   static addProperty(req, res) {
-    const { city, estate, type, bedroom, bathroom, image_url, description, sale_or_rent } = req.body;
-    if (!city || !estate || !type || !bedroom || !image_url || !bathroom || !description || !sale_or_rent) {
+    const { city, estate, type, bedroom, bathroom, image_url, price, sale_or_rent, owner_phone_number, owner_email } = req.body;
+    if (!city || !estate || !type || !bedroom || !image_url || !bathroom || !price || !sale_or_rent || !owner_phone_number || !owner_email) {
       util.setError(400, 'Please provide complete details');
       return util.send(res);
     }
@@ -25,9 +25,11 @@ class PropertyController {
         type,
         bedroom,
         bathroom,
-        description,
+        price,
         sale_or_rent,
-        image_url: result.url
+        image_url: result.url,
+        owner_phone_number,
+        owner_email
       };
       try {
         const createdProperty = await PropertyService.addProperty(newProperty);
