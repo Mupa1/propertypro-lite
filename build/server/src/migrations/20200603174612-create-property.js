@@ -1,5 +1,7 @@
+"use strict";
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: function up(queryInterface, Sequelize) {
     return queryInterface.createTable('Properties', {
       id: {
         allowNull: false,
@@ -9,7 +11,7 @@ module.exports = {
       },
       city: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
       },
       estate: {
         type: Sequelize.STRING,
@@ -57,7 +59,8 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
+  down: function down(queryInterface, Sequelize) {
     return queryInterface.dropTable('Properties');
   }
 };
+//# sourceMappingURL=20200603174612-create-property.js.map

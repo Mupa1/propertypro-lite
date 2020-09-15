@@ -29,9 +29,11 @@ describe('Testing the properties endpoints:', () => {
       type: 'Apartment',
       bedroom: 2,
       bathroom: 2,
-      image_url: 'image',
-      description: 'Two bedroom spacious apartment in Kileleshwa',
-      sale_or_rent: 'sale'
+      image_url: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      price: '20000/=',
+      sale_or_rent: 'sale',
+      owner_email: "mupasmail@mail.com",
+      owner_phone_number: "0720352124"
     };
     chai.request(app)
       .post('/api/v1/properties')
@@ -45,9 +47,10 @@ describe('Testing the properties endpoints:', () => {
           type: property.type,
           bedroom: property.bedroom,
           bathroom: property.bathroom,
-          image_url: property.image_url,
-          description: property.description,
-          sale_or_rent: property.sale_or_rent
+          price: property.price,
+          sale_or_rent: property.sale_or_rent,
+          owner_email: property.owner_email,
+          owner_phone_number: property.owner_phone_number
         });
         
         done();
@@ -86,8 +89,10 @@ describe('Testing the properties endpoints:', () => {
         res.body.data[0].should.have.property('bedroom');
         res.body.data[0].should.have.property('bathroom');
         res.body.data[0].should.have.property('image_url');
-        res.body.data[0].should.have.property('description');
+        res.body.data[0].should.have.property('price');
         res.body.data[0].should.have.property('sale_or_rent');
+        res.body.data[0].should.have.property('owner_email');
+        res.body.data[0].should.have.property('owner_phone_number');
         done();
       });
   }).timeout(10000);
@@ -105,8 +110,10 @@ describe('Testing the properties endpoints:', () => {
         res.body.data.should.have.property('bedroom');
         res.body.data.should.have.property('bathroom');
         res.body.data.should.have.property('image_url');
-        res.body.data.should.have.property('description');
+        res.body.data.should.have.property('price');
         res.body.data.should.have.property('sale_or_rent');
+        res.body.data.should.have.property('owner_phone_number');
+        res.body.data.should.have.property('owner_email');
         done();
       });
   }).timeout(10000);
@@ -149,8 +156,10 @@ describe('Testing the properties endpoints:', () => {
         expect(res.body.data.bedroom).equal(updatedproperty.bedroom);
         expect(res.body.data.bathroom).equal(updatedproperty.bathroom);
         expect(res.body.data.image_url).equal(updatedproperty.image_url);
-        expect(res.body.data.description).equal(updatedproperty.description);
+        expect(res.body.data.price).equal(updatedproperty.price);
         expect(res.body.data.sale_or_rent).equal(updatedproperty.sale_or_rent);
+        expect(res.body.data.owner_email).equal(updatedproperty.owner_email);
+        expect(res.body.data.owner_phone_number).equal(updatedproperty.owner_phone_number);
         done();
       });
   }).timeout(10000);

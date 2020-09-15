@@ -1,5 +1,7 @@
-module.exports = (sequelize, DataTypes) => {
-  const Property = sequelize.define('Property', {
+"use strict";
+
+module.exports = function (sequelize, DataTypes) {
+  var Property = sequelize.define('Property', {
     city: {
       type: DataTypes.STRING,
       allowNull: false
@@ -43,3 +45,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Property;
 };
+//# sourceMappingURL=property.js.map
